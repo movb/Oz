@@ -22,10 +22,13 @@ end
 
 declare
 fun {Reverse2 L}
-   R = {NewCell nil}
-   for X in L do
-      R:= X | @R
+   local R in
+      R = {NewCell nil}
+      for X in L do
+	 R:= X | @R
+      end
+      @R
    end
-   @R
 end
 
+{Browse {Reverse2 L}}
